@@ -1,0 +1,395 @@
+$main-color: #0a192f;
+$text-color: #8892b0;
+$links-color: #A8B2D1;
+$h1-color: #64ffda;
+$h2-color: #CCD6F6;
+$h3-color: #8892B0;
+$nav-link-color: #ffffff;
+
+$h2-font-size: 3rem;
+$h3-font-size: 2rem;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $main-color;
+    padding-top: 100px;
+}
+
+h1 {
+    font-size: 1rem;
+    font-family: 'Fira Code', monospace;
+    font-weight: 300;
+    margin: 1rem 0 1rem 0;
+    color: $h1-color;
+}
+
+h2 {
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 1rem;
+    color: $h2-color;
+    font-size: $h2-font-size;
+}
+
+h3 {
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    color: $h3-color;
+    font-size: $h3-font-size;
+}
+
+h4 {
+    font-family: 'Fira Code', monospace;
+    margin-bottom: 1rem;
+    color: $h3-color;
+}
+
+p {
+    font-family: 'Fira Code', monospace;
+    margin-bottom: 1rem;
+    color: $text-color;
+}
+
+ul {
+    text-decoration: none;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+// grid-templates mobile-------------------------------
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 60px 1fr 1fr;
+    grid-template-rows: 60px 1fr 1fr;
+}
+
+main {
+    grid-column: 2 / 4;
+    grid-row: 1 / 3;
+}
+
+footer {
+    grid-column: 2 / 4;
+    grid-row: 3 / 4;
+}
+// classes---------------------------------------------
+
+.nav {
+    background-color: $main-color;
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-link {
+    writing-mode: vertical-lr;
+    margin-bottom: 1rem;
+    color: $nav-link-color;
+}
+
+.tech-list li::before {
+    content: "▹";
+    color: $h2-color;
+    font-size: 1rem;
+}
+
+.pic-wrapper {
+    width: 260px;
+}
+
+.p-wrapper {
+    margin-bottom: 1rem;
+}
+
+.alex {
+    display: block;
+    border-radius: 5px;
+}
+
+.tech-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(140px, 200px));
+    list-style: none;
+    gap: 1rem;
+    color: $h1-color;
+}
+
+.download {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: end;
+}
+
+.cv-download {
+    text-decoration: none;
+    color: $h1-color;
+    text-align: right;
+    font-family: 'Fira Code', monospace;
+    margin: 0;
+    background-color: $h3-color;
+    border-radius: 5px;
+    padding: 1rem;
+    transition: all;
+    transition-duration: 0.3s;
+}
+
+
+.cv-download:hover {
+    transform: scale(1.2);
+    transition-duration: 0.3s;
+}
+
+.experience-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    place-content: center;
+}
+
+.experience-wrapper ul li {
+    color: $h2-color;
+    margin: 1rem;
+}
+
+.companies {
+    grid-column: 1 / 2;
+}
+
+.positions {
+    grid-column: 3 / 4;
+}
+
+.goals {
+    grid-column: 5 / 6;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.project-pic-wrapper {
+    width: 260px;
+}
+
+.side-bar1 {
+    position: fixed;
+    left: 1rem;
+    bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.side-bar1 a {
+    margin-bottom: 1rem;
+}
+
+.side-bar1 a i {
+    color: $links-color;
+    transition: all;
+    transition-duration: 0.3s;
+}
+
+.side-bar1 a :hover {
+    transform: scale(1.5);
+    transition-duration: 0.3s;
+    color: $h1-color;
+}
+
+.side-bar1::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 90px;
+    margin: 0px auto;
+    background-color: $h1-color;
+}
+
+.side-bar2 {
+    display: none;
+}
+
+@media screen and (min-width: 426px) {
+    body {
+        padding-top: 200px
+    }
+
+    .wrapper {
+        display: grid;
+        grid-template-columns: 70px 1fr 1fr 1fr 70px;
+        grid-template-rows: 1fr 1fr 1fr 200px;
+    }
+
+    .nav {
+        background-color: $main-color;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100px;
+    }  
+    
+    .logo {
+        width: 100px;
+    }
+
+    .logo-pic {
+        width: 100%;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-link {
+        writing-mode: horizontal-tb;
+        margin-bottom: 0%;
+        margin-right: 1rem;
+    }
+    main {
+        grid-column: 2 / 5;
+        grid-row: 1 / 4;
+    } 
+
+    footer {
+        grid-column: 2 / 5;
+        grid-row: 4 / 5;
+    }
+
+    .pic-wrapper::after {
+        border: 2px solid $h1-color;
+        bottom: 150px;
+        right: 20px;
+        z-index: -1;
+        content: "";
+        display: block;
+        position: relative;
+        width: 260px;
+        height: 180px;
+        border-radius: 5px;
+    }
+
+    .side-bar2 {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        right: 1rem;
+        bottom: 2rem;
+    }
+
+    .side-bar2 a {
+        transition: all;
+        transition-duration: 0.3s;
+    }
+    
+    .side-bar2 a:hover {
+        transform: scale(1.1);
+        transition-duration: 0.3s;
+        color: $h1-color;
+    }
+    
+    .side-bar2::after {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 90px;
+        margin: 0px auto;
+        background-color: $h1-color;
+    }
+
+    .e-mail {
+        display: inline-block;
+        writing-mode: vertical-rl;
+        color: $links-color;
+        letter-spacing: 0.1rem;
+        margin-bottom: 16px;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .wrapper {
+        grid-template-columns: 100px 1fr 1fr 1fr 100px;
+        grid-template-rows: 1fr 1fr 1fr 200px;
+    }
+
+    main {
+        grid-column: 2 / 5;
+        grid-row: 1 / 4;
+    }
+
+    footer {
+        grid-column: 2 / 5;
+        grid-row: 4 / 5;
+    }
+
+    .p-and-pic-wrapper {
+        display: flex;
+    }
+
+    .pic-wrapper {
+        margin-right: 2rem;
+        width: 260px;
+        display: block;
+    }
+
+    .project-pic-wrapper {
+        width: 300px;
+    }
+
+    .alex {
+        width: 260px;
+    }
+
+    .side-bar1 {
+        left: 2rem;
+    }
+
+    .side-bar2 {
+        right: 2rem;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    body {
+        padding: 200px 200px 0 200px;
+    }
+
+    .project-pic-wrapper {
+        width: 400px;
+    }
+}
+
+@media screen and (min-width: 1441px) {
+    body {
+        padding: 200px 400px 0 400px;
+    }
+
+    .project-pic-wrapper {
+        width: 500px;
+    }
+}
+
+
